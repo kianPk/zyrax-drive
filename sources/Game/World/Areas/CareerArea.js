@@ -4,6 +4,7 @@ import { color, float, Fn, luminance, max, mix, positionGeometry, step, texture,
 import gsap from 'gsap'
 import { clamp } from 'three/src/math/MathUtils.js'
 import { Area } from './Area.js'
+import { TextCanvas } from '../../TextCanvas.js'
 
 export class CareerArea extends Area
 {
@@ -83,7 +84,21 @@ export class CareerArea extends Area
             line.size = parseFloat(line.group.userData.size)
             line.hasEnd = line.group.userData.hasEnd
             line.color = line.group.userData.color
-            line.texture = this.game.resources[`${line.group.userData.texture}Texture`]
+            // Remap Bruno career plates to Kian's roles (runtime canvas — no Blender)
+            const careerLabels = {
+                careerFreelancer: ['ZYRAX', 'Indie / builder'],
+                careerHetic: ['SOLIDITY', 'TradeForge · VaultForge'],
+                careerImmersiveGarden: ['RUST', 'LoadForge services'],
+                careerIRLTeacher: ['GO', 'GateProxy · PulseHub'],
+                careerOnlineTeacher: ['SECURITY', 'Labs · honeypots'],
+                careerUzik: ['OPEN SOURCE', '@kianPk on GitHub'],
+            }
+            const key = line.group.userData.texture
+            const label = careerLabels[key] || ['KIAN', '@kianPk']
+            const textCanvas = new TextCanvas('Nunito', '900', 42, 6, 1.6, 64, 'center', 48)
+            textCanvas.updateText(label)
+            // Invert style: white glyphs on black (matches original mask textures)
+            line.texture = textCanvas.texture
 
             line.stone = line.group.children.find(child => child.name.startsWith('stone'))
             line.stone.position.y = 0

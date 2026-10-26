@@ -23,18 +23,66 @@ export class LandingArea extends Area
 
     setLetters()
     {
-        const references = this.references.items.get('letters')
+        // Replace baked "BRUNO SIMON" glyphs with Kian brand plate
+        const letterObjects = []
+        const center = new THREE.Vector3()
 
-        for(const reference of references)
+        for(const object of this.objects.items)
         {
-            const physical = reference.userData.object.physical
-            physical.colliders[0].setActiveEvents(this.game.RAPIER.ActiveEvents.CONTACT_FORCE_EVENTS)
-            physical.colliders[0].setContactForceEventThreshold(5)
-            physical.onCollision = (force, position) =>
-            {
-                this.game.audio.groups.get('hitBrick').playRandomNext(force, position)
-            }
+            const root = object.visual?.object3D
+            if(!root)
+                continue
+
+            if(!/letter/i.test(root.name || ''))
+                continue
+
+            letterObjects.push(object)
+            center.add(root.getWorldPosition(new THREE.Vector3()))
+            this.game.objects.disable(object)
         }
+
+        if(letterObjects.length)
+            center.multiplyScalar(1 / letterObjects.length)
+        else
+        {
+            const zone = this.references.items.get('zoneBounding')?.[0]
+            if(zone)
+                center.copy(zone.getWorldPosition(new THREE.Vector3()))
+        }
+
+        const canvas = document.createElement('canvas')
+        canvas.width = 2048
+        canvas.height = 512
+        const ctx = canvas.getContext('2d')
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillStyle = '#9fd7ff'
+        ctx.font = '900 260px "Amatic SC", "Nunito", sans-serif'
+        ctx.fillText("KIAN'S", canvas.width / 2, canvas.height / 2 - 36)
+        ctx.fillStyle = '#dcecff'
+        ctx.font = '700 110px "Nunito", sans-serif'
+        ctx.fillText('ZYRAX DRIVE', canvas.width / 2, canvas.height / 2 + 150)
+
+        const map = new THREE.CanvasTexture(canvas)
+        map.colorSpace = THREE.SRGBColorSpace
+        map.needsUpdate = true
+        map.flipY = true
+
+        const material = new THREE.MeshBasicNodeMaterial({
+            transparent: true,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+        })
+        material.colorNode = texture(map).rgb
+        material.opacityNode = texture(map).a
+
+        const mesh = new THREE.Mesh(new THREE.PlaneGeometry(14, 3.5), material)
+        mesh.rotation.x = -Math.PI / 2
+        mesh.position.copy(center)
+        mesh.position.y = 0.06
+        this.game.scene.add(mesh)
+        this.brandSign = mesh
     }
 
     setKiosk()

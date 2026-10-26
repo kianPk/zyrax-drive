@@ -87590,13 +87590,31 @@ https://github.com/browserify/crypto-browserify`);
       super(e), this.localTime = uniform$1(0), this.setLetters(), this.setKiosk(), this.setControls(), this.setBonfire(), this.setAchievement();
     }
     setLetters() {
-      const e = this.references.items.get("letters");
-      for (const r of e) {
-        const s = r.userData.object.physical;
-        s.colliders[0].setActiveEvents(this.game.RAPIER.ActiveEvents.CONTACT_FORCE_EVENTS), s.colliders[0].setContactForceEventThreshold(5), s.onCollision = (o, a) => {
-          this.game.audio.groups.get("hitBrick").playRandomNext(o, a);
-        };
+      var _a2, _b;
+      const e = [], r = new Vector3$1();
+      for (const d of this.objects.items) {
+        const f = (_a2 = d.visual) == null ? void 0 : _a2.object3D;
+        f && /letter/i.test(f.name || "") && (e.push(d), r.add(f.getWorldPosition(new Vector3$1())), this.game.objects.disable(d));
       }
+      if (e.length) r.multiplyScalar(1 / e.length);
+      else {
+        const d = (_b = this.references.items.get("zoneBounding")) == null ? void 0 : _b[0];
+        d && r.copy(d.getWorldPosition(new Vector3$1()));
+      }
+      const s = document.createElement("canvas");
+      s.width = 2048, s.height = 512;
+      const o = s.getContext("2d");
+      o.clearRect(0, 0, s.width, s.height), o.textAlign = "center", o.textBaseline = "middle", o.fillStyle = "#9fd7ff", o.font = '900 260px "Amatic SC", "Nunito", sans-serif', o.fillText("KIAN'S", s.width / 2, s.height / 2 - 36), o.fillStyle = "#dcecff", o.font = '700 110px "Nunito", sans-serif', o.fillText("ZYRAX DRIVE", s.width / 2, s.height / 2 + 150);
+      const a = new CanvasTexture(s);
+      a.colorSpace = SRGBColorSpace$1, a.needsUpdate = true, a.flipY = true;
+      const h = new MeshBasicNodeMaterial({
+        transparent: true,
+        depthWrite: false,
+        side: DoubleSide$1
+      });
+      h.colorNode = texture$1(a).rgb, h.opacityNode = texture$1(a).a;
+      const c = new Mesh$1(new PlaneGeometry(14, 3.5), h);
+      c.rotation.x = -Math.PI / 2, c.position.copy(r), c.position.y = 0.06, this.game.scene.add(c), this.brandSign = c;
     }
     setKiosk() {
       this.game.interactivePoints.create(this.references.items.get("kioskInteractivePoint")[0].position, "Map", InteractivePoints.ALIGN_RIGHT, InteractivePoints.STATE_CONCEALED, () => {
@@ -89390,18 +89408,48 @@ https://github.com/browserify/crypto-browserify`);
       };
       for (const o of e) {
         const a = {};
-        a.group = o, a.size = parseFloat(a.group.userData.size), a.hasEnd = a.group.userData.hasEnd, a.color = a.group.userData.color, a.texture = this.game.resources[`${a.group.userData.texture}Texture`], a.stone = a.group.children.find((h) => h.name.startsWith("stone")), a.stone.position.y = 0, a.origin = a.group.position.clone(), a.isIn = false, a.isUp = false, a.elevationTarget = 0, a.offsetTarget = 0, a.labelReveal = uniform$1(0);
+        a.group = o, a.size = parseFloat(a.group.userData.size), a.hasEnd = a.group.userData.hasEnd, a.color = a.group.userData.color;
+        const h = {
+          careerFreelancer: [
+            "ZYRAX",
+            "Indie / builder"
+          ],
+          careerHetic: [
+            "SOLIDITY",
+            "TradeForge \xB7 VaultForge"
+          ],
+          careerImmersiveGarden: [
+            "RUST",
+            "LoadForge services"
+          ],
+          careerIRLTeacher: [
+            "GO",
+            "GateProxy \xB7 PulseHub"
+          ],
+          careerOnlineTeacher: [
+            "SECURITY",
+            "Labs \xB7 honeypots"
+          ],
+          careerUzik: [
+            "OPEN SOURCE",
+            "@kianPk on GitHub"
+          ]
+        }, c = a.group.userData.texture, d = h[c] || [
+          "KIAN",
+          "@kianPk"
+        ], f = new TextCanvas("Nunito", "900", 42, 6, 1.6, 64, "center", 48);
+        f.updateText(d), a.texture = f.texture, a.stone = a.group.children.find((p) => p.name.startsWith("stone")), a.stone.position.y = 0, a.origin = a.group.position.clone(), a.isIn = false, a.isUp = false, a.elevationTarget = 0, a.offsetTarget = 0, a.labelReveal = uniform$1(0);
         {
-          a.textMesh = a.stone.children.find((d) => d.name.startsWith("careerText"));
-          const h = new MeshLambertNodeMaterial({
+          a.textMesh = a.stone.children.find((b) => b.name.startsWith("careerText"));
+          const p = new MeshLambertNodeMaterial({
             transparent: true
-          }), c = r[a.color];
-          h.outputNode = Fn$1(() => {
-            const d = uv$2().toVar();
-            step$1(d.x, a.labelReveal).lessThan(0.5).discard();
-            const f = texture$1(a.texture, d), p = step$1(0.1, max$2(f.r, f.g)), m = c.div(luminance(c)).mul(1.7), b = color$1("#251f2b"), w = mix$1(b, m, f.r);
-            return vec4$1(w, p);
-          })(), a.textMesh.castShadow = false, a.textMesh.receiveShadow = false, a.textMesh.material = h;
+          }), m = r[a.color];
+          p.outputNode = Fn$1(() => {
+            const b = uv$2().toVar();
+            step$1(b.x, a.labelReveal).lessThan(0.5).discard();
+            const w = texture$1(a.texture, b), M = step$1(0.1, max$2(w.r, w.g)), R = m.div(luminance(m)).mul(1.7), V = color$1("#251f2b"), O = mix$1(V, R, w.r);
+            return vec4$1(O, M);
+          })(), a.textMesh.castShadow = false, a.textMesh.receiveShadow = false, a.textMesh.material = p;
         }
         this.lines.items.push(a);
       }
@@ -108406,7 +108454,7 @@ ${e.tab}if ( ${m} ) {
           }
         ]
       ]), this.options = new Options(), this.respawns = new Respawns("landing"), this.view = new View(), this.rendering.setPostprocessing(), this.rendering.start(), this.reveal = new Reveal(), this.noises = new Noises(), this.weather = new Weather(), this.wind = new Wind(), this.tracks = new Tracks(), this.lighting = new Lighting(), this.fog = new Fog(), this.water = new Water(), this.materials = new Materials(), this.objects = new Objects(), this.explosions = new Explosions(), this.world = new World();
-      const a = __vitePreload(() => import("./rapier-DJBQ8owk.js").then(async (m) => {
+      const a = __vitePreload(() => import("./rapier-C7uyNSNf.js").then(async (m) => {
         await m.__tla;
         return m;
       }), [], import.meta.url), h = this.resourcesLoader.load([
