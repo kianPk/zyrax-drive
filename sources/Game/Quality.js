@@ -10,7 +10,10 @@ export class Quality
         this.events = new Events()
 
         const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-        this.level = isMobile ? 1 : 0 // 0 = highest quality
+        const saveData = !!(navigator.connection && navigator.connection.saveData)
+        const lowMem = !!(navigator.deviceMemory && navigator.deviceMemory <= 4)
+        // 0 = highest quality — prefer light by default for smoother drive
+        this.level = (isMobile || saveData || lowMem || window.innerWidth < 900) ? 1 : 0
 
         // Debug
         if(this.game.debug.active)

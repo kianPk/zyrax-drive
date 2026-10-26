@@ -1,51 +1,31 @@
 export default [
     {
-        title: 'Three.js Journey',
-        titleSmall: [ 'Three.js', 'Journey' ],
-        url: 'https://threejs-journey.com',
+        title: 'TradeForge',
+        titleSmall: [ 'Trade', 'Forge' ],
+        url: 'https://kianpk.github.io/tradeforge/',
         attributes:
         {
-            role: [ 'developer', 'formater' ],
-            with: [ 'Hervé Studio', 'Bonhomme Paris' ]
+            role: [ 'Solidity', 'protocol' ],
+            with: [ 'Foundry', 'OpenZeppelin' ]
         },
-        distinctions: [ 'fwa' ], // 'awwwards', 'fwa', 'cssda'
+        distinctions: [],
         images:
         [
             'threejs-journey-1.ktx',
             'threejs-journey-2.ktx',
             'threejs-journey-3.ktx',
-            'threejs-journey-4.ktx',
-            'threejs-journey-5.ktx',
         ]
     },
-    // {
-    //     title: 'Chartogne Taillet',
-    //     titleSmall: [ 'Chartogne', 'Taillet' ],
-    //     url: 'https://chartogne-taillet.com',
-    //     attributes:
-    //     {
-    //         at: 'Immersive Garden',
-    //         role: 'WebGL developer',
-    //         with: 'Rémi Tran'
-    //     },
-    //     distinctions: [ 'awwwards', 'cssda', 'fwa' ], // 'awwwards', 'fwa', 'cssda'
-    //     images:
-    //     [
-    //         'chartogne-taillet-1.ktx',
-    //         'chartogne-taillet-2.ktx',
-    //         'chartogne-taillet-3.ktx',
-    //     ]
-    // },
     {
-        title: 'Bonhomme | 10 ans',
-        titleSmall: [ 'Bonhomme', '10 ans' ],
-        url: 'https://anniversary.bonhommeparis.com',
+        title: 'VaultForge',
+        titleSmall: [ 'Vault', 'Forge' ],
+        url: 'https://github.com/kianPk/vaultforge',
         attributes:
         {
-            role: 'WebGL developer',
-            with: 'Bonhomme Paris'
+            role: 'Solidity developer',
+            with: 'ERC-4626'
         },
-        distinctions: [ 'awwwards', 'fwa' ],
+        distinctions: [],
         images:
         [
             'bonhomme-10-ans-1.ktx',
@@ -54,16 +34,15 @@ export default [
         ]
     },
     {
-        title: 'Madbox',
-        titleSmall: [ 'Madbox' ],
-        url: 'https://madbox.io',
+        title: 'LendGrid',
+        titleSmall: [ 'Lend', 'Grid' ],
+        url: 'https://github.com/kianPk/lendgrid',
         attributes:
         {
-            role: 'WebGL developer',
-            at: 'Hervé Studio',
-            with: 'Lei Xing'
+            role: 'Solidity developer',
+            with: 'Foundry'
         },
-        distinctions: [ 'awwwards' ],
+        distinctions: [],
         images:
         [
             'madbox-1.ktx',
@@ -72,34 +51,31 @@ export default [
         ]
     },
     {
-        title: 'Luni',
-        titleSmall: [ 'Luni' ],
-        url: 'https://www.luni.app',
+        title: 'LoadForge',
+        titleSmall: [ 'Load', 'Forge' ],
+        url: 'https://github.com/kianPk/loadforge',
         attributes:
         {
-            role: 'WebGL developer',
-            at: 'Hervé Studio',
-            with: 'Loïc Belaidremesal'
+            role: 'Rust engineer',
+            with: 'Tokio'
         },
-        distinctions: [ 'awwwards', 'fwa' ],
+        distinctions: [],
         images:
         [
             'luni-1.ktx',
             'luni-2.ktx',
             'luni-3.ktx',
-            'luni-4.ktx',
         ]
     },
     {
-        title: 'Scout',
-        titleSmall: [ 'Scout' ],
-        url: 'https://scout-omega.vercel.app',
+        title: 'GateProxy',
+        titleSmall: [ 'Gate', 'Proxy' ],
+        url: 'https://github.com/kianPk/gateproxy',
         attributes:
         {
-            role: 'WebGL developer',
-            at: 'Hervé Studio'
+            role: 'Go engineer',
         },
-        distinctions: [  ],
+        distinctions: [],
         images:
         [
             'scout-1.ktx',
@@ -108,15 +84,14 @@ export default [
         ]
     },
     {
-        title: 'Prior Holdings',
-        titleSmall: [ 'Prio', 'Holdings' ],
-        url: 'https://prior.co.jp/discover/en',
+        title: 'Playfield',
+        titleSmall: [ 'Play', 'field' ],
+        url: 'https://kianpk.github.io/playfield/',
         attributes:
         {
-            role: [ 'Front developer', 'WebGL developer' ],
-            at: 'Immersive Garden'
+            role: [ 'Three.js', 'portfolio' ],
         },
-        distinctions: [ 'awwwards', 'cssda', 'fwa' ],
+        distinctions: [],
         images:
         [
             'prior-1.ktx',
@@ -125,15 +100,14 @@ export default [
         ]
     },
     {
-        title: 'Orano',
-        titleSmall:  'Orano',
-        url: 'https://www.orano.group/experience/innovation/en',
+        title: 'Orbit Desk',
+        titleSmall: [ 'Orbit', 'Desk' ],
+        url: 'https://kianpk.github.io/orbit-desk/',
         attributes:
         {
-            role: [ 'Front developer', 'WebGL developer' ],
-            at: 'Immersive Garden'
+            role: [ 'R3F', 'portfolio' ],
         },
-        distinctions: [ 'awwwards', 'cssda', 'fwa' ],
+        distinctions: [],
         images:
         [
             'orano-1.ktx',
@@ -142,16 +116,14 @@ export default [
         ]
     },
     {
-        title: 'Citrix / Redbull',
-        titleSmall: ['Citrix', 'Redbull'],
-        url: 'https://thenewmobileworkforce.imm-g-prod.com',
+        title: 'Honeypot Deck',
+        titleSmall: ['Honey', 'Deck'],
+        url: 'https://kianpk.github.io/honeypot-deck/',
         attributes:
         {
-            role: [ 'WebGL developer' ],
-            at: 'Immersive Garden',
-            with: [ 'Damien Doussaud', 'Quentin Leclercq' ]
+            role: [ 'Vue', 'security lab' ],
         },
-        distinctions: [ 'awwwards', 'cssda', 'fwa' ],
+        distinctions: [],
         images:
         [
             'citrix-redbull-1.ktx',

@@ -21,7 +21,8 @@ export class Viewport
         this.ratio = this.width / this.height
 
         this.pixelRatioPure = window.devicePixelRatio
-        this.pixelRatioMax = 2
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+        this.pixelRatioMax = isMobile ? 1.25 : 1.5
         this.pixelRatio = Math.min(this.pixelRatioPure, this.pixelRatioMax)
     }
 

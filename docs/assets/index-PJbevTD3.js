@@ -86238,7 +86238,9 @@ https://github.com/browserify/crypto-browserify`);
     }
     measure() {
       const e = this.domElement.getBoundingClientRect();
-      this.width = e.width, this.height = e.height, this.ratio = this.width / this.height, this.pixelRatioPure = window.devicePixelRatio, this.pixelRatioMax = 2, this.pixelRatio = Math.min(this.pixelRatioPure, this.pixelRatioMax);
+      this.width = e.width, this.height = e.height, this.ratio = this.width / this.height, this.pixelRatioPure = window.devicePixelRatio;
+      const r = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      this.pixelRatioMax = r ? 1.25 : 1.5, this.pixelRatio = Math.min(this.pixelRatioPure, this.pixelRatioMax);
     }
     setResize() {
       let r = null;
@@ -87705,48 +87707,41 @@ https://github.com/browserify/crypto-browserify`);
   }
   const projectsData = [
     {
-      title: "Three.js Journey",
+      title: "TradeForge",
       titleSmall: [
-        "Three.js",
-        "Journey"
+        "Trade",
+        "Forge"
       ],
-      url: "https://threejs-journey.com",
+      url: "https://kianpk.github.io/tradeforge/",
       attributes: {
         role: [
-          "developer",
-          "formater"
+          "Solidity",
+          "protocol"
         ],
         with: [
-          "Herv\xE9 Studio",
-          "Bonhomme Paris"
+          "Foundry",
+          "OpenZeppelin"
         ]
       },
-      distinctions: [
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "threejs-journey-1.ktx",
         "threejs-journey-2.ktx",
-        "threejs-journey-3.ktx",
-        "threejs-journey-4.ktx",
-        "threejs-journey-5.ktx"
+        "threejs-journey-3.ktx"
       ]
     },
     {
-      title: "Bonhomme | 10 ans",
+      title: "VaultForge",
       titleSmall: [
-        "Bonhomme",
-        "10 ans"
+        "Vault",
+        "Forge"
       ],
-      url: "https://anniversary.bonhommeparis.com",
+      url: "https://github.com/kianPk/vaultforge",
       attributes: {
-        role: "WebGL developer",
-        with: "Bonhomme Paris"
+        role: "Solidity developer",
+        with: "ERC-4626"
       },
-      distinctions: [
-        "awwwards",
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "bonhomme-10-ans-1.ktx",
         "bonhomme-10-ans-2.ktx",
@@ -87754,19 +87749,17 @@ https://github.com/browserify/crypto-browserify`);
       ]
     },
     {
-      title: "Madbox",
+      title: "LendGrid",
       titleSmall: [
-        "Madbox"
+        "Lend",
+        "Grid"
       ],
-      url: "https://madbox.io",
+      url: "https://github.com/kianPk/lendgrid",
       attributes: {
-        role: "WebGL developer",
-        at: "Herv\xE9 Studio",
-        with: "Lei Xing"
+        role: "Solidity developer",
+        with: "Foundry"
       },
-      distinctions: [
-        "awwwards"
-      ],
+      distinctions: [],
       images: [
         "madbox-1.ktx",
         "madbox-2.ktx",
@@ -87774,36 +87767,32 @@ https://github.com/browserify/crypto-browserify`);
       ]
     },
     {
-      title: "Luni",
+      title: "LoadForge",
       titleSmall: [
-        "Luni"
+        "Load",
+        "Forge"
       ],
-      url: "https://www.luni.app",
+      url: "https://github.com/kianPk/loadforge",
       attributes: {
-        role: "WebGL developer",
-        at: "Herv\xE9 Studio",
-        with: "Lo\xEFc Belaidremesal"
+        role: "Rust engineer",
+        with: "Tokio"
       },
-      distinctions: [
-        "awwwards",
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "luni-1.ktx",
         "luni-2.ktx",
-        "luni-3.ktx",
-        "luni-4.ktx"
+        "luni-3.ktx"
       ]
     },
     {
-      title: "Scout",
+      title: "GateProxy",
       titleSmall: [
-        "Scout"
+        "Gate",
+        "Proxy"
       ],
-      url: "https://scout-omega.vercel.app",
+      url: "https://github.com/kianPk/gateproxy",
       attributes: {
-        role: "WebGL developer",
-        at: "Herv\xE9 Studio"
+        role: "Go engineer"
       },
       distinctions: [],
       images: [
@@ -87813,24 +87802,19 @@ https://github.com/browserify/crypto-browserify`);
       ]
     },
     {
-      title: "Prior Holdings",
+      title: "Playfield",
       titleSmall: [
-        "Prio",
-        "Holdings"
+        "Play",
+        "field"
       ],
-      url: "https://prior.co.jp/discover/en",
+      url: "https://kianpk.github.io/playfield/",
       attributes: {
         role: [
-          "Front developer",
-          "WebGL developer"
-        ],
-        at: "Immersive Garden"
+          "Three.js",
+          "portfolio"
+        ]
       },
-      distinctions: [
-        "awwwards",
-        "cssda",
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "prior-1.ktx",
         "prior-2.ktx",
@@ -87838,21 +87822,19 @@ https://github.com/browserify/crypto-browserify`);
       ]
     },
     {
-      title: "Orano",
-      titleSmall: "Orano",
-      url: "https://www.orano.group/experience/innovation/en",
+      title: "Orbit Desk",
+      titleSmall: [
+        "Orbit",
+        "Desk"
+      ],
+      url: "https://kianpk.github.io/orbit-desk/",
       attributes: {
         role: [
-          "Front developer",
-          "WebGL developer"
-        ],
-        at: "Immersive Garden"
+          "R3F",
+          "portfolio"
+        ]
       },
-      distinctions: [
-        "awwwards",
-        "cssda",
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "orano-1.ktx",
         "orano-2.ktx",
@@ -87860,27 +87842,19 @@ https://github.com/browserify/crypto-browserify`);
       ]
     },
     {
-      title: "Citrix / Redbull",
+      title: "Honeypot Deck",
       titleSmall: [
-        "Citrix",
-        "Redbull"
+        "Honey",
+        "Deck"
       ],
-      url: "https://thenewmobileworkforce.imm-g-prod.com",
+      url: "https://kianpk.github.io/honeypot-deck/",
       attributes: {
         role: [
-          "WebGL developer"
-        ],
-        at: "Immersive Garden",
-        with: [
-          "Damien Doussaud",
-          "Quentin Leclercq"
+          "Vue",
+          "security lab"
         ]
       },
-      distinctions: [
-        "awwwards",
-        "cssda",
-        "fwa"
-      ],
+      distinctions: [],
       images: [
         "citrix-redbull-1.ktx",
         "citrix-redbull-2.ktx",
@@ -88664,80 +88638,80 @@ https://github.com/browserify/crypto-browserify`);
   let ProjectsArea = _ProjectsArea;
   const labData = [
     {
-      title: "Black Hole",
-      url: "https://awwwards-2022-workshop.vercel.app",
+      title: "TradeForge",
+      url: "https://kianpk.github.io/tradeforge/",
       image: "black-hole.ktx",
       imageMini: "black-hole-mini.ktx"
     },
     {
-      title: "Infinite World",
-      url: "https://infinite-world.vercel.app",
+      title: "Playfield",
+      url: "https://kianpk.github.io/playfield/",
       image: "infinite-world.ktx",
       imageMini: "infinite-world-mini.ktx"
     },
     {
-      title: "My Room in 3D",
-      url: "https://my-room-in-3d.vercel.app",
+      title: "Orbit Desk",
+      url: "https://kianpk.github.io/orbit-desk/",
       image: "my-room-in-3d.ktx",
       imageMini: "my-room-in-3d-mini.ktx"
     },
     {
-      title: "Particles System",
-      url: "https://three-js-tsl-particles-system.vercel.app",
+      title: "VaultForge",
+      url: "https://github.com/kianPk/vaultforge",
       image: "particles-system.ktx",
       imageMini: "particles-system-mini.ktx"
     },
     {
-      title: "Stylized Low Poly",
-      url: "https://stylized-low-poly.vercel.app",
+      title: "Lumen Commerce",
+      url: "https://kianpk.github.io/lumen-commerce/",
       image: "stylized-low-poly.ktx",
       imageMini: "stylized-low-poly-mini.ktx"
     },
     {
-      title: "Holographic terrain",
-      url: "https://experiment-holographic-terrain.vercel.app",
+      title: "Forge Desk",
+      url: "https://kianpk.github.io/forge-desk/",
       image: "holographic-terrain.ktx",
       imageMini: "holographic-terrain-mini.ktx"
     },
     {
-      title: "Woodkid Volcano Robot",
-      url: "https://experiment-woodkid-volcano-robot.vercel.app",
+      title: "Sentinel Grid",
+      url: "https://kianpk.github.io/sentinel-grid/",
       image: "woodkid-volcano-robot.ktx",
       imageMini: "woodkid-volcano-robot-mini.ktx"
     },
     {
-      title: "Bounce Friday",
-      url: "https://threejs-journey.com/apps/bounce-friday/",
+      title: "Netprobe Lab",
+      url: "https://kianpk.github.io/netprobe-lab/",
       image: "bounce-friday.ktx",
       imageMini: "bounce-friday-mini.ktx"
     },
     {
-      title: "VFX flames",
-      url: "https://threejs.org/examples/webgpu_tsl_vfx_flames.html",
+      title: "VaultGuard",
+      url: "https://kianpk.github.io/vaultguard/",
       image: "vfx-flames.ktx",
       imageMini: "vfx-flames-mini.ktx"
     },
     {
-      title: "VFX tornado",
-      url: "https://threejs.org/examples/webgpu_tsl_vfx_tornado.html",
+      title: "Honeypot Deck",
+      url: "https://kianpk.github.io/honeypot-deck/",
       image: "vfx-tornado.ktx",
       imageMini: "vfx-tornado-mini.ktx"
     },
     {
-      title: "DOOM Portal",
-      url: "https://doom-portal-in-webgl.vercel.app",
+      title: "PulseHub",
+      url: "https://github.com/kianPk/pulsehub",
       image: "doom-portal.ktx",
       imageMini: "doom-portal-mini.ktx"
     },
     {
-      title: "Organic Sphere",
-      url: "https://organic-sphere.vercel.app",
+      title: "GitHub",
+      url: "https://github.com/kianPk",
       image: "organic-sphere.ktx",
       imageMini: "organic-sphere-mini.ktx"
     },
     {
-      title: "Attractors",
-      url: "https://threejs.org/examples/webgpu_tsl_compute_attractors_particles.html",
+      title: "Telegram",
+      url: "https://t.me/Kian_asli",
       image: "attractors.ktx",
       imageMini: "attractors-mini.ktx"
     }
@@ -91353,9 +91327,9 @@ https://github.com/browserify/crypto-browserify`);
       "wu"
     ],
     [
-      "Three.js Journey",
-      "Three.js Journey",
-      "jj"
+      "Zyrax",
+      "Zyrax Drive",
+      "zx"
     ]
   ];
   class InputFlag {
@@ -92170,7 +92144,7 @@ https://github.com/browserify/crypto-browserify`);
     }
     setInteractivePoint() {
       this.interactivePoint = this.game.interactivePoints.create(this.references.items.get("interactivePoint")[0].position, "Time Machine", InteractivePoints.ALIGN_RIGHT, InteractivePoints.STATE_CONCEALED, () => {
-        window.open("https://2019.bruno-simon.com");
+        window.open("https://kianpk.github.io/playfield/");
       }, () => {
         this.game.inputs.interactiveButtons.addItems([
           "interact"
@@ -93068,7 +93042,7 @@ https://github.com/browserify/crypto-browserify`);
   const emojiRegex = () => /[#*0-9]\uFE0F?\u20E3|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26AA\u26B0\u26B1\u26BD\u26BE\u26C4\u26C8\u26CF\u26D1\u26E9\u26F0-\u26F5\u26F7\u26F8\u26FA\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2757\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B55\u3030\u303D\u3297\u3299]\uFE0F?|[\u261D\u270C\u270D](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?|[\u270A\u270B](?:\uD83C[\uDFFB-\uDFFF])?|[\u23E9-\u23EC\u23F0\u23F3\u25FD\u2693\u26A1\u26AB\u26C5\u26CE\u26D4\u26EA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2795-\u2797\u27B0\u27BF\u2B50]|\u26D3\uFE0F?(?:\u200D\uD83D\uDCA5)?|\u26F9(?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|\u2764\uFE0F?(?:\u200D(?:\uD83D\uDD25|\uD83E\uDE79))?|\uD83C(?:[\uDC04\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]\uFE0F?|[\uDF85\uDFC2\uDFC7](?:\uD83C[\uDFFB-\uDFFF])?|[\uDFC4\uDFCA](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDFCB\uDFCC](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF43\uDF45-\uDF4A\uDF4C-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uDDE6\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF]|\uDDE7\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF]|\uDDE8\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF7\uDDFA-\uDDFF]|\uDDE9\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF]|\uDDEA\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA]|\uDDEB\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7]|\uDDEC\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE]|\uDDED\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA]|\uDDEE\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9]|\uDDEF\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5]|\uDDF0\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF]|\uDDF1\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE]|\uDDF2\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF]|\uDDF3\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF]|\uDDF4\uD83C\uDDF2|\uDDF5\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE]|\uDDF6\uD83C\uDDE6|\uDDF7\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC]|\uDDF8\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF]|\uDDF9\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF]|\uDDFA\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF]|\uDDFB\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA]|\uDDFC\uD83C[\uDDEB\uDDF8]|\uDDFD\uD83C\uDDF0|\uDDFE\uD83C[\uDDEA\uDDF9]|\uDDFF\uD83C[\uDDE6\uDDF2\uDDFC]|\uDF44(?:\u200D\uD83D\uDFEB)?|\uDF4B(?:\u200D\uD83D\uDFE9)?|\uDFC3(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?|\uDFF3\uFE0F?(?:\u200D(?:\u26A7\uFE0F?|\uD83C\uDF08))?|\uDFF4(?:\u200D\u2620\uFE0F?|\uDB40\uDC67\uDB40\uDC62\uDB40(?:\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDC73\uDB40\uDC63\uDB40\uDC74|\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F)?)|\uD83D(?:[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3]\uFE0F?|[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC](?:\uD83C[\uDFFB-\uDFFF])?|[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4\uDEB5](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDD74\uDD90](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?|[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC25\uDC27-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE41\uDE43\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEDC-\uDEDF\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB\uDFF0]|\uDC08(?:\u200D\u2B1B)?|\uDC15(?:\u200D\uD83E\uDDBA)?|\uDC26(?:\u200D(?:\u2B1B|\uD83D\uDD25))?|\uDC3B(?:\u200D\u2744\uFE0F?)?|\uDC41\uFE0F?(?:\u200D\uD83D\uDDE8\uFE0F?)?|\uDC68(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D(?:[\uDC68\uDC69]\u200D\uD83D(?:\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?)|[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?)|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFC-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB\uDFFD-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB-\uDFFD\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB-\uDFFE])))?))?|\uDC69(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?[\uDC68\uDC69]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D(?:[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?|\uDC69\u200D\uD83D(?:\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?))|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFC-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB\uDFFD-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB-\uDFFD\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB-\uDFFE])))?))?|\uDC6F(?:\u200D[\u2640\u2642]\uFE0F?)?|\uDD75(?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|\uDE2E(?:\u200D\uD83D\uDCA8)?|\uDE35(?:\u200D\uD83D\uDCAB)?|\uDE36(?:\u200D\uD83C\uDF2B\uFE0F?)?|\uDE42(?:\u200D[\u2194\u2195]\uFE0F?)?|\uDEB6(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?)|\uD83E(?:[\uDD0C\uDD0F\uDD18-\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5\uDEC3-\uDEC5\uDEF0\uDEF2-\uDEF8](?:\uD83C[\uDFFB-\uDFFF])?|[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD\uDDCF\uDDD4\uDDD6-\uDDDD](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDDDE\uDDDF](?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDD0D\uDD0E\uDD10-\uDD17\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCC\uDDD0\uDDE0-\uDDFF\uDE70-\uDE7C\uDE80-\uDE89\uDE8F-\uDEC2\uDEC6\uDECE-\uDEDC\uDEDF-\uDEE9]|\uDD3C(?:\u200D[\u2640\u2642]\uFE0F?|\uD83C[\uDFFB-\uDFFF])?|\uDDCE(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?|\uDDD1(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1|\uDDD1\u200D\uD83E\uDDD2(?:\u200D\uD83E\uDDD2)?|\uDDD2(?:\u200D\uD83E\uDDD2)?))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFC-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB\uDFFD-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB-\uDFFD\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB-\uDFFE]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?))?|\uDEF1(?:\uD83C(?:\uDFFB(?:\u200D\uD83E\uDEF2\uD83C[\uDFFC-\uDFFF])?|\uDFFC(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB\uDFFD-\uDFFF])?|\uDFFD(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])?|\uDFFE(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB-\uDFFD\uDFFF])?|\uDFFF(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB-\uDFFE])?))?)/g;
   class Whispers {
     constructor() {
-      this.game = Game.getInstance(), this.count = parseInt("30"), this.setSounds(), this.setFlames(), this.setData(), this.setBubble(), this.setMenu(), this.setInputs(), this.game.ticker.events.on("tick", () => {
+      this.game = Game.getInstance(), this.count = parseInt("12"), this.setSounds(), this.setFlames(), this.setData(), this.setBubble(), this.setMenu(), this.setInputs(), this.game.ticker.events.on("tick", () => {
         this.update();
       }, 10);
     }
@@ -100063,13 +100037,13 @@ https://github.com/browserify/crypto-browserify`);
   class Quality {
     constructor() {
       this.game = Game.getInstance(), this.events = new Events();
-      const e = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      if (this.level = e ? 1 : 0, this.game.debug.active) {
-        const r = this.game.debug.panel.addFolder({
+      const e = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent), r = !!(navigator.connection && navigator.connection.saveData), s = !!(navigator.deviceMemory && navigator.deviceMemory <= 4);
+      if (this.level = e || r || s || window.innerWidth < 900 ? 1 : 0, this.game.debug.active) {
+        const o = this.game.debug.panel.addFolder({
           title: "\u2699\uFE0F Quality",
           expanded: false
         });
-        this.game.debug.addButtons(r, {
+        this.game.debug.addButtons(o, {
           low: () => {
             this.changeLevel(1);
           },
@@ -100125,7 +100099,7 @@ https://github.com/browserify/crypto-browserify`);
             d.position -= h.size - 1;
           }
         }
-        document.title = "Bruno" + o.join("");
+        document.title = "Kian" + o.join("");
       }
     }
   }
@@ -108400,7 +108374,7 @@ ${e.tab}if ( ${m} ) {
       this.domElement = document.querySelector(".game"), this.canvasElement = this.domElement.querySelector(".js-canvas"), document.documentElement.classList.add("is-started"), this.scene = new Scene$1(), this.debug = new Debug(), this.resourcesLoader = new ResourcesLoader(), this.quality = new Quality(), this.server = new Server(), this.ticker = new Ticker(), this.time = new Time(), this.dayCycles = new DayCycles(), this.yearCycles = new YearCycles(), this.inputs = new Inputs([], [
         "intro"
       ]), this.audio = new Audio$1(), this.notifications = new Notifications(), this.rayCursor = new RayCursor(), this.viewport = new Viewport(this.domElement), this.modals = new Modals(), this.menu = new Menu(), this.rendering = new Rendering(), await this.rendering.setRenderer();
-      const e = "", r = "texture", s = "png", o = "?cb=1";
+      const e = "-compressed", r = "textureKtx", s = "ktx", o = "?cb=1";
       this.resources = await this.resourcesLoader.load([
         [
           "respawnsReferencesModel",
@@ -108432,7 +108406,7 @@ ${e.tab}if ( ${m} ) {
           }
         ]
       ]), this.options = new Options(), this.respawns = new Respawns("landing"), this.view = new View(), this.rendering.setPostprocessing(), this.rendering.start(), this.reveal = new Reveal(), this.noises = new Noises(), this.weather = new Weather(), this.wind = new Wind(), this.tracks = new Tracks(), this.lighting = new Lighting(), this.fog = new Fog(), this.water = new Water(), this.materials = new Materials(), this.objects = new Objects(), this.explosions = new Explosions(), this.world = new World();
-      const a = __vitePreload(() => import("./rapier-BemCkZQ0.js").then(async (m) => {
+      const a = __vitePreload(() => import("./rapier-DJBQ8owk.js").then(async (m) => {
         await m.__tla;
         return m;
       }), [], import.meta.url), h = this.resourcesLoader.load([
@@ -108715,82 +108689,54 @@ ${e.tab}if ( ${m} ) {
     }
   }
   const text = `
-\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2557   \u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557                   
-\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u255A\u2550\u255D\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255D                   
-\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551   \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557                   
-\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551\u255A\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551   \u255A\u2550\u2550\u2550\u2550\u2588\u2588\u2551                   
-\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551  \u2588\u2588\u2551\u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551 \u255A\u2588\u2588\u2588\u2588\u2551\u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D   \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551                   
-\u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u255D  \u255A\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u255D  \u255A\u2550\u2550\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u255D    \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D                   
-                                                                       
-\u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557     \u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 
-\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u255A\u2550\u2550\u2588\u2588\u2554\u2550\u2550\u255D\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255D\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557
-\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D   \u2588\u2588\u2551   \u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551
-\u2588\u2588\u2554\u2550\u2550\u2550\u255D \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557   \u2588\u2588\u2551   \u2588\u2588\u2554\u2550\u2550\u255D  \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551
-\u2588\u2588\u2551     \u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551  \u2588\u2588\u2551   \u2588\u2588\u2551   \u2588\u2588\u2551     \u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551\u255A\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D
-\u255A\u2550\u255D      \u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u255D  \u255A\u2550\u255D   \u255A\u2550\u255D   \u255A\u2550\u255D      \u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D\u255A\u2550\u255D \u255A\u2550\u2550\u2550\u2550\u2550\u255D 
+\u2588\u2588\u2557  \u2588\u2588\u2557\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2557                       
+\u2588\u2588\u2551 \u2588\u2588\u2554\u255D\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551                       
+\u2588\u2588\u2588\u2588\u2588\u2554\u255D \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557 \u2588\u2588\u2551                       
+\u2588\u2588\u2554\u2550\u2588\u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551\u255A\u2588\u2588\u2557\u2588\u2588\u2551                       
+\u2588\u2588\u2551  \u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551 \u255A\u2588\u2588\u2588\u2588\u2551                       
+\u255A\u2550\u255D  \u255A\u2550\u255D\u255A\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u2550\u2550\u255D                       
+                                                      
+\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557
+\u255A\u2550\u2550\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551
+  \u2588\u2588\u2588\u2554\u255D \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557 \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551
+ \u2588\u2588\u2588\u2554\u255D  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551\u255A\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551
+\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551 \u255A\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255D\u2588\u2588\u2551
+\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u255D\u255A\u2550\u255D  \u255A\u2550\u2550\u2550\u255D\u255A\u2550\u2550\u2550\u2550\u2550\u255D \u255A\u2550\u255D
 
 \u2554\u2550 Intro \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 Thank you for visiting my portfolio, you sneaky developer!
-\u2551 If you are curious about the stack and how I built this project, here\u2019s everything you need to know.
+\u2551 Thanks for peeking under the hood.
+\u2551 Zyrax Drive is Kian Zarandi's (@kianPk) portfolio.
+\u2551 Engine adapted from folio-2025 (MIT).
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 
 \u2554\u2550 Socials \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 Mail           \u21D2 simon.bruno.77@gmail.com
-\u2551 X              \u21D2 https://x.com/bruno_simon
-\u2551 BlueSKy        \u21D2 https://bsky.app/profile/bruno-simon.bsky.social
-\u2551 Discord public \u21D2 https://discord.com/channels/769928116701233152/1445064878384480288
-\u2551 Discord PM     \u21D2 https://discord.com/users/202907325722263553
-\u2551 Youtube        \u21D2 https://www.youtube.com/@BrunoSimon
-\u2551 Twitch         \u21D2 https://www.twitch.tv/bruno_simon_dev
-\u2551 GitHub         \u21D2 https://github.com/brunosimon
-\u2551 LinkedIn       \u21D2 https://www.linkedin.com/in/simonbruno77/
+\u2551 Mail     \u21D2 kianzarandi701@gmail.com
+\u2551 Telegram \u21D2 https://t.me/Kian_asli
+\u2551 GitHub   \u21D2 https://github.com/kianPk
+\u2551 Web      \u21D2 https://www.zyrax.ir
+\u2551 Playfield\u21D2 https://kianpk.github.io/playfield/
+\u2551 Orbit    \u21D2 https://kianpk.github.io/orbit-desk/
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 
 \u2554\u2550 Debug \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 You can access the debug mode by adding #debug at the end of the URL and reloading.
+\u2551 Add #debug to the URL and reload.
 \u2551 Press [V] to toggle the free camera.
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 
 \u2554\u2550 Three.js \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 Three.js is the library I\u2019m using to render this 3D world (release: ${REVISION})
+\u2551 Three.js powers this world (release: ${REVISION})
 \u2551 https://threejs.org/
-\u2551 It was created by mr.doob (https://x.com/mrdoob, https://github.com/mrdoob),
-\u2551 followed by hundreds of awesome developers,
-\u2551 one of which being Sunag (https://x.com/sea3dformat, https://github.com/sunag) who added TSL,
-\u2551 enabling the use of both WebGL and WebGPU, making this portfolio possible.
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 
-\u2554\u2550 Three.js Journey \u2550\u2550\u2550\u2550\u2557
-\u2551 If you want to learn Three.js, I got you covered with this huge course.
-\u2551 https://threejs-journey.com/
-\u2551 It contains everything you need to start building awesome stuff with Three.js (and much more).
+\u2554\u2550 Engine credit \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+\u2551 folio-2025 engine (MIT) \xB7 Bruno Simon
+\u2551 Content & branding \xB7 Kian Zarandi
+\u2551 https://github.com/kianPk/zyrax-drive
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 
-\u2554\u2550 Devlogs \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 I\u2019ve been making devlogs since the very start of this portfolio
-\u2551 and you can find them all on my Youtube channel.
-\u2551 https://www.youtube.com/@BrunoSimon
-\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
-
-\u2554\u2550 Source code \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 The code is available on GitHub under MIT license. Even the Blender files are there, so have fun!
-\u2551 https://github.com/brunosimon/folio-2025
-\u2551 For security reasons, I\u2019m not sharing the server code, but the portfolio works without it.
-\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
-
-\u2554\u2550 Musics \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 The music you hear was made especially for this portfolio by the awesome Kounine (Linktree).
-\u2551 https://linktr.ee/Kounine
-\u2551 They are now under CC0 license, meaning you can do whatever you want with them!
-\u2551 Download them here.
-\u2551 https://github.com/brunosimon/folio-2025/tree/main/static/sounds/musics
-\u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
-
-\u2554\u2550 Some more links \u2550\u2550\u2550\u2550\u2550\u2557
-\u2551 Rapier (Physics library)  \u21D2 https://rapier.rs/
-\u2551 Howler.js (Audio library) \u21D2 https://howlerjs.com/
-\u2551 Amatic SC (Fonts)         \u21D2 https://fonts.google.com/specimen/Amatic+SC
-\u2551 Nunito (Fonts).           \u21D2 https://fonts.google.com/specimen/Nunito?query=Nunito
+\u2554\u2550 Stack extras \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+\u2551 Rapier  \u21D2 https://rapier.rs/
+\u2551 Howler  \u21D2 https://howlerjs.com/
 \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
 `;
   let finalText = "", finalStyles = [];
