@@ -48,8 +48,8 @@ export class Objects
             if(visualDescription.updateMaterials)
                 this.game.materials.updateObject(visualDescription.model)
 
-            // Update shadows
-            if(visualDescription.castShadow || visualDescription.receiveShadow)
+            // Update shadows (skipped entirely on low-power / mobile)
+            if(!this.game.quality.isLowPower && (visualDescription.castShadow || visualDescription.receiveShadow))
             {
                 visualDescription.model.traverse(_child =>
                 {
@@ -60,6 +60,17 @@ export class Objects
 
                         if(visualDescription.receiveShadow)
                             _child.receiveShadow = true
+                    }
+                })
+            }
+            else if(this.game.quality.isLowPower && visualDescription.model)
+            {
+                visualDescription.model.traverse(_child =>
+                {
+                    if(_child.isMesh)
+                    {
+                        _child.castShadow = false
+                        _child.receiveShadow = false
                     }
                 })
             }

@@ -216,7 +216,7 @@ export class SocialArea extends Area
         {
             i++
             const position = this.fwa.positions[i % this.fwa.positions.length]
-            this.game.world.confetti.pop(position)
+            this.game.world.confetti?.pop(position)
             
             setTimeout(pop, 500 + Math.random() * 1500)
         }

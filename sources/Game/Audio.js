@@ -28,7 +28,9 @@ export class Audio
         this.initiated = true
 
         this.setPlaylist()
-        this.setAmbiants()
+        // Ambient loops (rain/wind/waves/crickets…) are heavy on phones — skip in low-power
+        if(!this.game.quality.isLowPower)
+            this.setAmbiants()
         this.setOneOffs()
 
         // Play all autoplays that didn't start because not initated
@@ -248,7 +250,8 @@ export class Audio
             this.playlist.current.sound.play()
         }
 
-        if(import.meta.env.VITE_MUSIC)
+        // Skip autoplay music on phones — big decode/CPU hit; user can unmute in Options
+        if(import.meta.env.VITE_MUSIC && !this.game.quality.isLowPower)
         {
             this.playlist.play()
         }

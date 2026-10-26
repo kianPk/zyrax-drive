@@ -53,18 +53,26 @@ export class World
         }
         else if(step === 1)
         {
+            const lowPower = this.game.quality.isLowPower
+
             this.visualVehicle = new VisualVehicle(this.game.resources.vehicle.scene)
             this.floor = new Floor()
             this.waterSurface = new WaterSurface()
             this.grass = new Grass()
-            this.windLines = new WindLines()
-            this.confetti = new Confetti()
-            this.leaves = new Leaves()
-            this.rain = new RainLines()
-            this.lightnings = new Lightnings()
-            this.fireballs = new Fireballs()
-            this.snow = new Snow()
-            this.visualTornado = new VisualTornado()
+
+            // Skip heavy particle / weather FX on phones
+            if(!lowPower)
+            {
+                this.windLines = new WindLines()
+                this.confetti = new Confetti()
+                this.leaves = new Leaves()
+                this.rain = new RainLines()
+                this.lightnings = new Lightnings()
+                this.fireballs = new Fireballs()
+                this.snow = new Snow()
+                this.visualTornado = new VisualTornado()
+            }
+
             this.bushes = new Bushes()
             this.birchTrees = new Trees('Birch Tree', this.game.resources.birchTreesVisualModel.scene, this.game.resources.birchTreesReferencesModel.scene.children, '#ff4f2b', '#ff903f')
             this.oakTrees = new Trees('Oak Tree', this.game.resources.oakTreesVisualModel.scene, this.game.resources.oakTreesReferencesModel.scene.children, '#b4b536', '#d8cf3b')
@@ -81,6 +89,7 @@ export class World
         }
         else if(step === 2)
         {
+            // Whispers still load, but with a tiny count on mobile (see Whispers.js)
             this.whispers = new Whispers()
         }
     }

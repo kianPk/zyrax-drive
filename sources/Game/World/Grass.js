@@ -9,7 +9,8 @@ export class Grass
     {
         this.game = Game.getInstance()
 
-        this.subdivisions = 280
+        // 280² ≈ 78k blades — crush this on phones
+        this.subdivisions = this.game.quality.isLowPower ? 90 : 280
         const halfExtent = this.game.view.optimalArea.radius
         this.size = halfExtent * 2
         this.count = this.subdivisions * this.subdivisions

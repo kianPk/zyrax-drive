@@ -15,7 +15,8 @@ export class Leaves
         //     return
 
         const power = Math.round(remap((this.game.yearCycles.properties.leaves.value), 0.25, 1, 7, 11))
-        this.count = Math.pow(2, power)
+        // Cap leaf compute particles hard on low-power devices
+        this.count = Math.pow(2, this.game.quality.isLowPower ? Math.min(power, 5) : power)
         // this.count = Math.pow(2, 12)
 
         // Debug

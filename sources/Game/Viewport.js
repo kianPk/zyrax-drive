@@ -22,7 +22,9 @@ export class Viewport
 
         this.pixelRatioPure = window.devicePixelRatio
         const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-        this.pixelRatioMax = isMobile ? 1.25 : 1.5
+            || window.matchMedia('(pointer: coarse)').matches
+        // Cap hard on phones — DPR>1 is a major cause of mobile lag in this scene
+        this.pixelRatioMax = isMobile ? 1 : 1.5
         this.pixelRatio = Math.min(this.pixelRatioPure, this.pixelRatioMax)
     }
 

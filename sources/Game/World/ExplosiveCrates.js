@@ -135,7 +135,7 @@ export class ExplosiveCrates
             this.sounds.explosions[Math.floor(Math.random() * this.sounds.explosions.length)].play(crate.reference.position)
 
             // Explode
-            this.game.world.fireballs.create(crate.object.physical.body.translation())
+            this.game.world.fireballs?.create(crate.object.physical.body.translation())
 
             // Disable
             this.game.objects.disable(crate.object)

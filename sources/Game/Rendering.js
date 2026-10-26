@@ -37,18 +37,21 @@ export class Rendering
 
     async setRenderer()
     {
+        const lowPower = this.game.quality.isLowPower
+
         this.renderer = new THREE.WebGPURenderer({
             canvas: this.game.canvasElement,
             powerPreference: 'high-performance',
             forceWebGL: false,
-            antialias: this.game.viewport.pixelRatio < 2
+            antialias: !lowPower && this.game.viewport.pixelRatio < 2
         })
         this.renderer.setSize(this.game.viewport.width, this.game.viewport.height)
         this.renderer.setPixelRatio(this.game.viewport.pixelRatio)
         this.renderer.sortObjects = false
 
         this.renderer.domElement.classList.add('experience')
-        this.renderer.shadowMap.enabled = true
+        // Shadows are a major mobile cost — off in low-power mode
+        this.renderer.shadowMap.enabled = !lowPower
         // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
         this.renderer.setOpaqueSort((a, b) =>
         {
@@ -64,8 +67,16 @@ export class Rendering
             this.renderer.inspector = new Inspector()
         }
 
-        // Make the renderer control the ticker
-        this.renderer.setAnimationLoop((elapsedTime) => { this.game.ticker.update(elapsedTime) })
+        // Cap ~30fps on phones to cut GPU/thermal load
+        this.minFrameMs = lowPower ? 1000 / 30 : 0
+        this._lastFrameMs = 0
+        this.renderer.setAnimationLoop((elapsedTime) =>
+        {
+            if(this.minFrameMs && elapsedTime - this._lastFrameMs < this.minFrameMs)
+                return
+            this._lastFrameMs = elapsedTime
+            this.game.ticker.update(elapsedTime)
+        })
 
         return this.renderer
             .init()
@@ -86,16 +97,16 @@ export class Rendering
 
         this.cheapDOFPass = cheapDOF(renderOutput(scenePass))
 
-        // Quality
+        // Quality — low power skips bloom entirely (biggest mobile win)
         const qualityChange = (level) =>
         {
             if(level === 0)
             {
                 this.postProcessing.outputNode = this.cheapDOFPass.add(this.bloomPass)
             }
-            else if(level === 1)
+            else
             {
-                this.postProcessing.outputNode = scenePassColor.add(this.bloomPass)
+                this.postProcessing.outputNode = scenePassColor
             }
 
             this.postProcessing.needsUpdate = true

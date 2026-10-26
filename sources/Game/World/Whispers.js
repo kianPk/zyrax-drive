@@ -13,7 +13,8 @@ export class Whispers
     {
         this.game = Game.getInstance()
 
-        this.count = parseInt(import.meta.env.VITE_WHISPERS_COUNT)
+        const envCount = parseInt(import.meta.env.VITE_WHISPERS_COUNT) || 12
+        this.count = this.game.quality.isLowPower ? Math.min(envCount, 4) : envCount
 
         this.setSounds()
         this.setFlames()
