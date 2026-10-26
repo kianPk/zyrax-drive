@@ -1,32 +1,24 @@
 # Zyrax Drive
 
-Drive around **Kian Zarandi**'s interactive 3D portfolio world.
+Driveable 3D portfolio for **Kian Zarandi**.
 
-Live: [kianpk.github.io/zyrax-drive](https://kianpk.github.io/zyrax-drive/)
+Live: https://kianpk.github.io/zyrax-drive/
 
-Inspired by playful driveable portfolios (e.g. Bruno Simon) — original low-poly world, car, and zones for Kian's projects.
+## Credit
 
-## Controls
+This experience is built from **[Bruno Simon’s folio-2025](https://github.com/brunosimon/folio-2025)** (MIT License) — the same engine and art that power [bruno-simon.com](https://bruno-simon.com/).
 
-| Desktop | Mobile |
-|--------|--------|
-| WASD / arrows | On-screen joystick |
-| Shift = boost | Pull up to a building → **Open** |
-| Enter / Open near a building | |
+Copyright (c) 2025 Bruno Simon — see `license.md`.
 
-## Stack
-
-- React · Vite · Three.js · React Three Fiber · Drei
-- Adaptive quality: phones skip shadows / lower DPR / fewer props
+Customizations for Kian: welcome copy, social links, and GitHub Pages deploy.
 
 ## Run
 
 ```bash
-npm install
+cp .env.example .env
+npm install --force
 npm run dev
-npm run build   # writes to docs/ for GitHub Pages
+npm run build   # → dist/
 ```
 
-## Credit
-
-Portfolio concept homage to creative WebGL portfolios. Art, layout, and code are original for `@kianPk`.
+Deploy: copy `dist/` to `docs/` for GitHub Pages (`base: './'`).
